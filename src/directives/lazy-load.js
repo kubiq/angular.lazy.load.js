@@ -43,7 +43,7 @@ angular.module('angularify.angular-lazyload')
                     var windowWidth  = $window.innerWidth;
 
                     // calculate visible Y at the bottom
-                    var visibleY = scrollTop + innerHeight;
+                    var visibleY = scrollTop + $window.innerHeight;
 
                     if ($element[0].getBoundingClientRect().top <= visibleY){
                         // load image

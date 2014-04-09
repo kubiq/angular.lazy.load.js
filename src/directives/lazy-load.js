@@ -8,7 +8,7 @@ angular.module('angularify.angular-lazyload')
                 // image path
                 var img_path = $attrs.lazy;
                 // get current page
-                var $page = angular.element(window);
+                var $page = angular.element($window);
 
                 //
                 // Get element position
@@ -34,9 +34,9 @@ angular.module('angularify.angular-lazyload')
                         return;
 
                     // get top scrolling position
-                    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+                    var scrollTop = ($window.pageYOffset !== undefined) ? $window.pageYOffset : ($document.documentElement || $document.body.parentNode || $document.body).scrollTop;
                     // get left scrolling position
-                    var scrollLeft = (window.pageXOffset !== undefined) ? window.pageXOffset : (document.documentElement || document.body.parentNode || document.body).scrollLeft;
+                    var scrollLeft = ($window.pageXOffset !== undefined) ? $window.pageXOffset : ($document.documentElement || $document.body.parentNode || $document.body).scrollLeft;
                     // get window height
                     var windowHeight = $window.innerHeight;
                     // get widnow width
@@ -56,14 +56,14 @@ angular.module('angularify.angular-lazyload')
                 //
                 // Init document
                 //
-                angular.element(window).bind('load', function(){
+                angular.element($window).bind('load', function(){
                     load_images();
                 });
 
                 //
                 // Scroll handler
                 //
-                angular.element(document).bind('scroll', function() {
+                angular.element($document).bind('scroll', function() {
                     load_images();
                 });
             }
